@@ -3,17 +3,14 @@ import './App.css';
 import HeaderComponent from './components/header';
 import ExperienceComponent from './components/experience';
 import AcheivementsComponent from './components/acheivements';
+import ArticlesComponent from './components/articles';
+import SocialComponent from './components/social.js';
 import Particles from './components/particles';
-import { Spring, animated } from 'react-spring';
-const componentArray = [
-  <HeaderComponent />,
-  <AcheivementsComponent />,
-  <ExperienceComponent />
-];
+import { Spring, animated, Parallax } from 'react-spring';
+
 class App extends Component {
   state = {
-    toggle: true,
-    components: componentArray
+    toggle: true
   };
   style = {
     nonCode: {
@@ -21,32 +18,51 @@ class App extends Component {
       color: '#ffc7e3'
     }
   };
-  onToggle = () => this.setState(state => ({ toggle: !state.toggle }));
-  onAddText = () =>
-    this.setState(state => ({
-      components: [...state.components, state.components[2]]
-    }));
-  onRemoveText = () =>
-    this.setState(state => ({ components: state.components.slice(1) }));
+
   render() {
     const { toggle, components } = this.state;
 
     return (
       <div className="App">
-        <button onClick={this.onToggle}>Toggle</button>
-        <button onClick={this.onAddText}>Add text</button>
-        <button onClick={this.onRemoveText}>Remove text</button>
         <div style={this.style.nonCode} className="container">
-          <Spring
-            native
-            from={{ height: 0 }}
-            to={{ height: toggle ? 'auto' : 0 }}>
-            {props => (
-              <animated.div className="item" style={props}>
-                {components.map(c => <div>{c}</div>)}
-              </animated.div>
-            )}
-          </Spring>
+          <Parallax ref={ref => (this.parallax = ref)} pages={5}>
+            <Parallax.Layer
+              factor={1}
+              offset={0}
+              speed={1}
+              style={{ backgroundColor: '#805E73' }}>
+              <HeaderComponent />
+            </Parallax.Layer>
+            <Parallax.Layer
+              factor={1}
+              offset={1}
+              speed={1}
+              style={{ backgroundColor: '#87BCDE' }}>
+              <AcheivementsComponent />
+            </Parallax.Layer>
+            <Parallax.Layer
+              factor={1}
+              offset={2}
+              speed={1}
+              style={{ backgroundColor: '#805E73' }}>
+              <ExperienceComponent />
+            </Parallax.Layer>
+            <Parallax.Layer
+              factor={1}
+              offset={3}
+              speed={0.1}
+              style={{ backgroundColor: '#87BCDE' }}>
+              <ArticlesComponent />
+            </Parallax.Layer>
+            <Parallax.Layer
+              factor={1}
+              offset={4}
+              speed={0.3}
+              style={{ backgroundColor: 'green' }}>
+              >
+              <SocialComponent />
+            </Parallax.Layer>
+          </Parallax>
         </div>
       </div>
     );
