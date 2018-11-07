@@ -30,6 +30,15 @@ const FooterComponent = () => {
         <span />
         <br />
         <span>Living and working in Irvine, Orange County CA</span>
+        <br />
+
+        <a
+          href={
+            "https://docs.google.com/document/d/19KpVmE9zaLFRU-xROBHqmyt_3P3sfhVlnrY3eE7Vu9A/edit?usp=sharing"
+          }
+        >
+          <span style={{ textDecoration: "none", fontSize: 16 }}>Resume</span>
+        </a>
       </div>
     </div>
   );
