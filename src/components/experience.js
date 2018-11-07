@@ -1,16 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import CodeWindow from "./code-window";
+const experience = {};
 
-const ExperienceComponent = () => {
+const ExperienceBlock = () => {
   return (
     <div>
-      <div className="container">
+      <div>
         <div className="row">
           <div className="col-sm">
             <h3>2017 - Present (1.5 years)</h3>
           </div>
           <div className="col-sm">
             <h1>LOD PLANNER</h1>
-            <p>Full Stack Engineer</p>
+            <p>React / Ruby On Rails Engineer</p>
           </div>
         </div>
         <div className="row">
@@ -19,7 +21,7 @@ const ExperienceComponent = () => {
           </div>
           <div className="col-sm">
             <h1>HireIris</h1>
-            <p>Ruby On Rails Developer</p>
+            <p>React / Ruby On Rails Engineer</p>
           </div>
         </div>
         <div className="row">
@@ -36,4 +38,47 @@ const ExperienceComponent = () => {
   );
 };
 
-export default ExperienceComponent;
+const codeBlock = `
+
+  const ExperienceComponent = ({experience}) => (
+      <div>
+        <div className="row">
+          <div className="col-sm">
+            <h3>experience[years]</h3>
+          </div>
+          <div className="col-sm">
+            <h1>experience[company]</h1>
+            <p>experience[title]</p>
+          </div>
+        </div>
+  );
+
+  ...
+  <div className="container">
+    {this.props.experiences(experience =>{
+      return (
+        <ExperienceComponent {...experience}/>
+      )
+    }}
+  </div>
+  ...
+
+`;
+
+export default class ExperienceComponent extends Component {
+  onComplete = () => {};
+  render() {
+    return (
+      <div>
+        <div className="container">
+          <CodeWindow
+            filename={"/components/presentational/experience.js"}
+            codeBlock={codeBlock}
+            onComplete={this.onComplete}
+            component={<ExperienceBlock />}
+          />
+        </div>
+      </div>
+    );
+  }
+}

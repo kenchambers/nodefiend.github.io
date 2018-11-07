@@ -1,58 +1,64 @@
-import React, { Component } from 'react';
-import CodeWindow from './code-window';
-import { Spring } from 'react-spring';
+import React, { Component } from "react";
+import CodeWindow from "./code-window";
+import { Spring } from "react-spring";
+
+const acheivments = {
+  ["react"]: [
+    "built hundreds of React Components in ES6/7, inside of a Redux Framework.",
+    "refactored redux actions/reducers to new versions as our understanding of redux expanded",
+    "Helped architect React with flux/redux architecture ",
+    "Integrated Material UI into redux/Flux application.",
+    "implemented socket notifcations system on front end using socket io",
+    "implemented react-dnd to create kanban board on production application",
+    "implemented social logins for google/facebook/linkedin",
+    "experienced integrator of open source libraries"
+  ],
+  ["rails"]: [
+    "Designed RSPEC Framework for our backend Rails API",
+    "Helped Debug AWS infrastructure , after remote team set it up and handed it over to us.",
+    "Changed upload pattern for apps existing database models , replaced to use cloud front signed urls",
+    "wrote rails migration script to transfer s3 assets from insecure to secure buckets on aws",
+    "architected pundit pattern and wrapped all endpoints in policies",
+    "experienced connector of external apis with rails servers."
+  ]
+};
 
 const AcheivmentBlock = () => (
   <div>
     <h2>React</h2>
     <div>
-      <ul>
-        <li>
-          built hundreds of React Components in ES6/7, inside of a Redux
-          Framework.
-        </li>
-        <li>
-          converted redux actions/reducers to new versions as our understanding
-          of redux expanded
-        </li>
-        <li>Helped build React with flux architecture Standalone Front End</li>
-        <li>Integrated Material UI into Flux application.</li>
-        <li>implemented socket notifcations</li>
-      </ul>
+      <ul>{acheivments.react.map((item, i) => <li key={i}>{item}</li>)}</ul>
     </div>
     <h2>Rails</h2>
     <div>
-      <ul>
-        <li>Designed RSPEC Framework for our backend Rails API</li>
-        <li>
-          Helped Debug AWS infrastructure , after remote team set it up and
-          handed it over to us.
-        </li>
-        <li>
-          Changed upload pattern for apps existing database models , replaced to
-          use cloud front signed urls
-        </li>
-        <li>
-          wrote rails migration script to transfer s3 assets from insecure to
-          secure buckets on aws
-        </li>
-        <li>
-          architected pundit pattern and wrapped all endpoints in policies
-        </li>
-      </ul>
+      <div>
+        <ul>{acheivments.rails.map((item, i) => <li key={i}>{item}</li>)}</ul>
+      </div>
     </div>
   </div>
 );
+
 const codeBlock = `
-<pre><code>
-function foo(chicken) {
-  <tabReplace>if (chicken != "hen"){
-    <tabReplace><tabReplace>this.mustBeARabbit(animal);
-      <tabReplace>}
-        <tabReplace>return 'bar'
-}
-</code>
-</pre>`;
+
+  const acheivementComponent = ({acheivements}) => (
+    <div className="container">
+      <div className="row">
+        <h1> React </h1>
+        <ul>
+          {acheivements.react.map((item)=> <li>item</li)}
+        </ul>
+      </div>
+
+      <div className="row">
+        <h1> Rails </h1>
+        <ul>
+          {acheivements.rails.map((item)=> <li>item</li)}
+        </ul>
+      </div>
+    <div>
+  );
+
+`;
 
 export default class AcheivementsComponent extends Component {
   onComplete = () => {};
@@ -61,7 +67,7 @@ export default class AcheivementsComponent extends Component {
       <div>
         <div className="container">
           <CodeWindow
-            filename={'/components/presentational/acheivements.js'}
+            filename={"/components/presentational/acheivements.js"}
             codeBlock={codeBlock}
             onComplete={this.onComplete}
             component={<AcheivmentBlock />}

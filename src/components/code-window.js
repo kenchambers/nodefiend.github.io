@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import Highlight from 'react-highlight';
-import ParticlesComponent from './particles';
-import './code-window.css';
-import './atom-one-dark.css';
-import { Spring, Transition, animated } from 'react-spring';
+import React, { Component } from "react";
+import Highlight from "react-highlight";
+import ParticlesComponent from "./particles";
+import "./code-window.css";
+import "./atom-one-dark.css";
+import { Spring, Transition, animated } from "react-spring";
 
 const Code = ({ codeBlock, filename }) => (
   <div className="window">
@@ -16,9 +16,7 @@ const Code = ({ codeBlock, filename }) => (
       {filename}
     </div>
     <div className="content">
-      <Highlight innerHTML={true} className="javascript">
-        {codeBlock}
-      </Highlight>
+      <Highlight language="javascript">{codeBlock}</Highlight>
     </div>
   </div>
 );

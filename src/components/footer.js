@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CommitComponent from "./commit-component";
+
 const style = {
   dropShadow: {
     WebkitBoxShadow: "9px 25px 158px -38px rgba(0,0,0,0.75)",
@@ -7,27 +8,31 @@ const style = {
     boxShadow: "9px 25px 158px -38px rgba(0,0,0,0.75)"
   }
 };
-const HeaderComponent = () => {
+
+const FooterComponent = () => {
   return (
     <div style={{ padding: 25 }}>
       <img
         style={{
           ...style.dropShadow,
           marginTop: "10vh",
-          width: "25vw",
+          width: "200px",
           borderRadius: "50%"
         }}
-        src="https://s3-us-west-2.amazonaws.com/thecodebender.com/ken.jpg"
+        src="https://s3-us-west-2.amazonaws.com/thecodebender.com/photoofken.jpg"
       />
       <div style={{ marginTop: 50 }}>
         <h1 className="App-title">Ken Chambers</h1>
         <h3>React || Ruby Ninja</h3>
-        <span>code is my paintbrush and the web is my easel.</span>
+        <span>Looking to make more friends passionate about code</span>
         <br />
+        <span>Please reach out to me through any social media Outlet :)</span>
+        <span />
+        <br />
+        <span>Living and working in Irvine, Orange County CA</span>
       </div>
-      <CommitComponent />
     </div>
   );
 };
 
-export default HeaderComponent;
+export default FooterComponent;

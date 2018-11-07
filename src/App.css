@@ -1,3 +1,15 @@
+/* *************************************** */
+/* Custom Css classes :  */
+/* *************************************** */
+
+.article-component:hover {
+  -webkit-animation: heartBeat 1.3s;
+  animation: heartBeat 1.3s;
+}
+.article-component:active {
+  -webkit-animation: heartBeat 1.3s;
+  animation: heartBeat 1.3s;
+}
 .App {
   /* text-align: center; */
 }
@@ -20,6 +32,69 @@
 
 .App-intro {
   font-size: large;
+}
+
+/* *************************************** */
+/* github calendar :  */
+/* *************************************** */
+
+text.month {
+  display: none;
+}
+
+text.wday {
+  display: none;
+}
+
+div.contrib-footer {
+  display: none;
+}
+
+span.text-muted {
+  color: #fff !important;
+}
+
+.py-2 {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+  border: none !important;
+  padding-right: 25px;
+}
+
+@keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  14% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  42% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.heartBeat {
+  -webkit-animation-name: heartBeat;
+  animation-name: heartBeat;
+  -webkit-animation-duration: 1.3s;
+  animation-duration: 1.3s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes App-logo-spin {
