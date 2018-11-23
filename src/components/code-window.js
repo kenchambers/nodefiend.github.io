@@ -13,7 +13,7 @@ const Code = ({ codeBlock, filename }) => (
         <div className="minimize" />
         <div className="zoom" />
       </div>
-      {filename}
+      <span className="code-title-header">{filename}</span>
     </div>
     <div className="content">
       <Highlight language="javascript">{codeBlock}</Highlight>

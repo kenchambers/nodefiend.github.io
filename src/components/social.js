@@ -389,6 +389,7 @@ const SocialContainer = ({
 
 const SocialBlock = ({ selectedBlock, onClick }) => (
   <div>
+    <h1>The Web self</h1>
     <div className="row">
       {socialData.map(social => {
         const props = {

@@ -11,7 +11,10 @@ const acheivments = {
     "implemented socket notifcations system on front end using socket io",
     "implemented react-dnd to create kanban board on production application",
     "implemented social logins for google/facebook/linkedin",
-    "experienced integrator of open source libraries"
+    "experienced integrator of open source libraries",
+    "Took Charge of versioning front end / backend as our knowledge of best practices and design patterns expanded",
+    "Took Charge of localization initiative, using google translate api",
+    "hatched clever optmization techniques as user data scaled"
   ],
   ["rails"]: [
     "Designed RSPEC Framework for our backend Rails API",
@@ -19,7 +22,9 @@ const acheivments = {
     "Changed upload pattern for apps existing database models , replaced to use cloud front signed urls",
     "wrote rails migration script to transfer s3 assets from insecure to secure buckets on aws",
     "architected pundit pattern and wrapped all endpoints in policies",
-    "experienced connector of external apis with rails servers."
+    "experienced connector of external apis with rails servers.",
+    "Single Handedly Integrated Google Translate API in a push for localization",
+    "Helped Version rails backend as our understanding of best practicies and design patterns expanded"
   ]
 };
 
@@ -66,6 +71,9 @@ export default class AcheivementsComponent extends Component {
     return (
       <div>
         <div className="container">
+          <h1 style={{ position: "relative", marginTop: -45 }}>
+            Small Victories
+          </h1>
           <CodeWindow
             filename={"/components/presentational/acheivements.js"}
             codeBlock={codeBlock}

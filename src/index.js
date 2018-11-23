@@ -7,10 +7,5 @@ import { ParallaxProvider } from "react-scroll-parallax";
 // import '../src/assets/css/hover-min.css';
 import "bootstrap/dist/css/bootstrap.css";
 
-ReactDOM.render(
-  <ParallaxProvider>
-    <App />
-  </ParallaxProvider>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));
 registerServiceWorker();

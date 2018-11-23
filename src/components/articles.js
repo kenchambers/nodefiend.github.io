@@ -128,6 +128,7 @@ export default class ArticlesComponent extends Component {
   render() {
     return (
       <div className="container">
+        <h1>Problem Solving</h1>
         <CodeWindow
           filename={"/components/presentational/articles.js"}
           codeBlock={codeBlock}

@@ -23,7 +23,8 @@ const FooterComponent = () => {
       />
       <div style={{ marginTop: 50 }}>
         <h1 className="App-title">Ken Chambers</h1>
-        <h3>React || Ruby Ninja</h3>
+        <h3>Trained In Startup Land</h3>
+        <h4>Wizards Apprentice for 4 + years</h4>
         <span>Looking to make more friends passionate about code</span>
         <br />
         <span>Please reach out to me through any social media Outlet :)</span>

@@ -35,6 +35,7 @@ class App extends Component {
             >
               <HeaderComponent />
             </Parallax.Layer>
+
             <Parallax.Layer
               factor={1}
               offset={1}
