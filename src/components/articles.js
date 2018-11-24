@@ -65,10 +65,10 @@ const Article = ({ title, image, link }) => (
     }}
   >
     <div className="row">
-      <img style={{ height: 100, width: 190 }} src={image} />
+      <img style={{ height: 100, width: 200 }} src={image} />
     </div>
     <div className="row">
-      <h3>{title}</h3>
+      <h4 style={{ padding: 5 }}>{title}</h4>
     </div>
   </div>
 );
