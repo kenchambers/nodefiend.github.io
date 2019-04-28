@@ -52,7 +52,7 @@ const articlesData = [
   }
 ];
 
-const Article = ({ title, image, link }) => (
+const Article = ({ title, image, link, mobile }) => (
   <div
     className="article-component container"
     onClick={() => window.open(link, "_blank")}
@@ -61,7 +61,8 @@ const Article = ({ title, image, link }) => (
       width: 200,
       height: 200,
       backgroundColor: "white",
-      boxShadow: "rgba(0, 0, 0, 0.75) 9px 25px 158px -38px"
+      boxShadow: "rgba(0, 0, 0, 0.75) 9px 25px 158px -38px",
+      marginBottom: mobile ? 40 : 0
     }}
   >
     <div className="row">
@@ -73,19 +74,21 @@ const Article = ({ title, image, link }) => (
   </div>
 );
 
-const ArticlesBlock = () => (
-  <div className="container">
-    <div className="row">
-      {articlesData.map((article, i) => {
-        return (
-          <div key={i} className="col">
-            <Article {...article} />
-          </div>
-        );
-      })}
+const ArticlesBlock = ({ mobile }) => {
+  return (
+    <div className="container">
+      <div className="row">
+        {articlesData.map((article, i) => {
+          return (
+            <div key={i} className="col">
+              <Article {...article} mobile={mobile} />
+            </div>
+          );
+        })}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const codeBlock = `
 const Article = ({ title, image, link }) => (
@@ -124,8 +127,21 @@ const ArticlesBlock = () => (
 `;
 
 export default class ArticlesComponent extends Component {
+  state = {
+    mobile: false
+  };
+
+  componentDidMount() {
+    if (window.innerWidth < 500) {
+      this.setState({
+        mobile: true
+      });
+    }
+  }
+
   onComplete = () => {};
   render() {
+    const { mobile } = this.state;
     return (
       <div className="container">
         <h1>Problem Solving</h1>
@@ -133,7 +149,7 @@ export default class ArticlesComponent extends Component {
           filename={"/components/presentational/articles.js"}
           codeBlock={codeBlock}
           onComplete={this.onComplete}
-          component={<ArticlesBlock />}
+          component={<ArticlesBlock mobile={mobile} />}
         />
       </div>
     );

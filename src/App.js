@@ -11,7 +11,8 @@ import { Spring, animated, Parallax } from "react-spring";
 
 class App extends Component {
   state = {
-    toggle: true
+    toggle: true,
+    mobile: false
   };
   style = {
     nonCode: {
@@ -20,8 +21,21 @@ class App extends Component {
     }
   };
 
+  componentDidMount() {
+    if (window.innerWidth < 500) {
+      this.setState({
+        mobile: true
+      });
+    }
+
+    console.log(
+      "%cNOTHING TO SEE HERE, LOL  :P ",
+      "color: red; font-size: 70px; font-weight: bold;"
+    );
+  }
+
   render() {
-    const { toggle, components } = this.state;
+    const { toggle, components, mobile } = this.state;
 
     return (
       <div className="App">
@@ -30,7 +44,7 @@ class App extends Component {
             <Parallax.Layer
               factor={1}
               offset={0}
-              speed={2}
+              speed={0.1}
               style={{ backgroundColor: "#805E73" }}
             >
               <HeaderComponent />
@@ -38,32 +52,32 @@ class App extends Component {
 
             <Parallax.Layer
               factor={1}
-              offset={1}
-              speed={1}
+              offset={1.25}
+              speed={0.1}
               style={{ backgroundColor: "#87BCDE" }}
             >
               <AcheivementsComponent />
             </Parallax.Layer>
             <Parallax.Layer
               factor={1}
-              offset={2}
-              speed={1}
+              offset={mobile ? 3.2 : 3}
+              speed={0.1}
               style={{ backgroundColor: "#805E73" }}
             >
               <ExperienceComponent />
             </Parallax.Layer>
             <Parallax.Layer
               factor={1}
-              offset={4}
-              speed={0.1}
+              offset={4.5}
+              speed={0.2}
               style={{ backgroundColor: "#87BCDE", height: "2000px" }}
             >
               <ArticlesComponent />
             </Parallax.Layer>
             <Parallax.Layer
               factor={1}
-              offset={7}
-              speed={0.3}
+              offset={mobile ? 7 : 6.2}
+              speed={0.1}
               style={{ backgroundColor: "palevioletred" }}
             >
               >
@@ -73,7 +87,7 @@ class App extends Component {
             <Parallax.Layer
               factor={1}
               offset={9}
-              speed={0.3}
+              speed={0.2}
               style={{ backgroundColor: "palevioletred" }}
             >
               >

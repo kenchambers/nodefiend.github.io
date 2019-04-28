@@ -23,8 +23,10 @@ const acheivments = {
     "wrote rails migration script to transfer s3 assets from insecure to secure buckets on aws",
     "architected pundit pattern and wrapped all endpoints in policies",
     "experienced connector of external apis with rails servers.",
-    "Single Handedly Integrated Google Translate API in a push for localization",
-    "Helped Version rails backend as our understanding of best practicies and design patterns expanded"
+    "built a react/rails SPA to integrate with existing app using Google Translate API in a push for localization",
+    "Versioned rails backend as our understanding of best practicies and design patterns expanded",
+    "integrated Sendgrid V3 web API into our application to send emails",
+    "integrated Intercom V1.1 Ruby API into our application to keep track of user app data , analytics"
   ]
 };
 
@@ -32,12 +34,20 @@ const AcheivmentBlock = () => (
   <div>
     <h2>React</h2>
     <div>
-      <ul>{acheivments.react.map((item, i) => <li key={i}>{item}</li>)}</ul>
+      <ul>
+        {acheivments.react.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
     </div>
     <h2>Rails</h2>
     <div>
       <div>
-        <ul>{acheivments.rails.map((item, i) => <li key={i}>{item}</li>)}</ul>
+        <ul>
+          {acheivments.rails.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
       </div>
     </div>
   </div>

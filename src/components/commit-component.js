@@ -4,7 +4,9 @@
 import React from "react";
 
 import fetchAsync from "../utils/async";
-const GitHubCalendar = require("../../node_modules/github-calendar");
+// const GitHubCalendar = require("../../node_modules/github-calendar");
+
+import GitHubCalendar from "github-calendar";
 
 class CommitComponent extends React.Component {
   calendarOptions = {
